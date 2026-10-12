@@ -1,0 +1,30 @@
+--- a/vllm/v1/worker/lora_model_runner_mixin.py	2026-09-30 16:57:05.761777750 +0800
++++ b/vllm/v1/worker/lora_model_runner_mixin.py	2026-09-30 16:57:05.753777751 +0800
+@@ -4,6 +4,7 @@
+ Define LoRA functionality mixin for model runners.
+ """
+ 
++import os
+ from contextlib import contextmanager
+ from typing import Optional, Union
+ 
+@@ -86,7 +87,8 @@
+     def maybe_setup_dummy_loras(self,
+                                 lora_config: Optional[LoRAConfig],
+                                 remove_lora: bool = True):
+-        if lora_config is None:
++        if lora_config is None or os.environ.get("VLLM_SKIP_LORA_WARMUP",
++                                                 "0") == "1":
+             yield
+         else:
+             # __enter__ code
+@@ -118,7 +120,8 @@
+     @contextmanager
+     def maybe_select_dummy_loras(self, lora_config: Optional[LoRAConfig],
+                                  num_scheduled_tokens: np.ndarray):
+-        if lora_config is None:
++        if lora_config is None or os.environ.get("VLLM_SKIP_LORA_WARMUP",
++                                                 "0") == "1":
+             yield
+         else:
+             # __enter__ code

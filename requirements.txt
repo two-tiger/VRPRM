@@ -1,0 +1,8 @@
+# Lightweight dependencies for data processing and OpenAI-compatible evaluation.
+# SFT and RL training use the separate pinned environments in sft/ and easyr1/.
+datasets>=2.20
+huggingface_hub>=0.24
+openai>=1.40
+pillow>=10.0
+requests>=2.32
+tqdm>=4.66

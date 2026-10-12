@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use VRPRM, please cite the paper and released artifacts."
+title: "VRPRM: Process Reward Modeling via Visual Reasoning"
+authors:
+  - family-names: Chen
+    given-names: Xinquan
+  - family-names: Yue
+    given-names: Chongying
+  - family-names: Liu
+    given-names: Bangwei
+  - family-names: Wang
+    given-names: Xuhong
+  - family-names: Wang
+    given-names: Yingchun
+  - family-names: Lu
+    given-names: Chaochao
+doi: 10.48550/arXiv.2508.03556
+identifiers:
+  - type: arXiv
+    value: "2508.03556"
+repository-code: "https://github.com/two-tiger/VRPRM"
+abstract: "Visual reasoning process reward models for multimodal mathematics and reasoning."
+license: Apache-2.0
